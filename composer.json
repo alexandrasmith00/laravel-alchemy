@@ -2,6 +2,7 @@
     "name": "lexismith/laravel-alchemy",
     "description": "Package for Laravel integration with Alchemy API",
     "license": "MIT",
+		"version": "1.0.0",
     "authors": [
         {
             "name": "lexismith",
@@ -14,6 +15,8 @@
         }
     },
     "require": {
-        "illuminate/support": "~5"
+        "illuminate/support": "~5",
+			  "php": ">=5.5.9",
+        "laravel/framework": "5.1.*"
     }
 }
