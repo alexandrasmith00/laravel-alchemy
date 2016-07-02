@@ -1,0 +1,19 @@
+{
+    "name": "lexismith/laravel-alchemy",
+    "description": "Package for Laravel integration with Alchemy API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lexismith",
+            "email": "alexandrasmith00@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+					"LexiSmith\\LaravelAlchemy\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "~5"
+    }
+}
