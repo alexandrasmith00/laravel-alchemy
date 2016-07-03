@@ -35,6 +35,28 @@ class Alchemy
 		$this->_ENDPOINTS = $endpoints->get();
 	}
 
+	/**
+	  *	Tags the concepts for text, a URL or HTML.
+	  *	For an overview, please refer to: http://www.alchemyapi.com/products/features/concept-tagging/
+	  *	For the docs, please refer to: http://www.alchemyapi.com/api/concept-tagging/ 
+	  *	
+	  *	Available Options:
+	  *	maxRetrieve -> the maximum number of concepts to retrieve (default: 8)
+	  *	linkedData -> include linked data, 0: disabled, 1: enabled (default)
+	  *	showSourceText -> 0:disabled (default), 1: enabled
+	  *
+	  *	OUTPUT:
+	  *	The response, already converted from JSON to a PHP object. 
+	*/
+	public function emotion($flavor, $data, $options) {
+		//Make sure this request supports the flavor
+		if (!array_key_exists($flavor, $this->_ENDPOINTS['emotion'])) {
+			return array('status'=>'ERROR','statusInfo'=>'Concept tagging for ' . $flavor . ' not available');
+		}
+		//Add the data to the options and analyze
+		$options[$flavor] = $data;
+		return $this->analyze($this->_ENDPOINTS['emotion'][$flavor], $options);
+	}
 	
 	
 	/**
